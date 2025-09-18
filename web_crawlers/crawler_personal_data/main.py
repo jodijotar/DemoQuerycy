@@ -45,7 +45,7 @@ def scrap(url, url2):
 
     file = f"{dados['nome'].replace(' ', '_').lower()}.json"
     
-    with open(f"/home/kali/Desktop/DemoQuerycy/src/data/json_files/{file}", 'w', encoding='utf-8') as json_file:
+    with open(f"C:/Users/guilh/Desktop/Faculdade/demoquerycy/src/data/json_files{file}", 'w', encoding='utf-8') as json_file:
         json.dump(dados, json_file, ensure_ascii=False, indent=4)
         
     print(f"\n{dados['nome_social']} data collected!")

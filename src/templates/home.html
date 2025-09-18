@@ -37,11 +37,11 @@ Home
         <!-- Carousel -->
         <div id="politiciansCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                {% for group in politicos|batch(4, '') %}
-                <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
+                {% for slide in slides %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
                     <div class="row g-4 justify-content-center">
-                        {% for politico in group %}
-                        {% if politico %}
+                        <!-- Loop through each politico in the current slide -->
+                        {% for politico in slide %}
                         <div class="col-12 col-sm-6 col-lg-3">
                             <div class="card custom-card text-center shadow-sm">
                                 <div class="custom-card-header">
@@ -61,7 +61,6 @@ Home
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>

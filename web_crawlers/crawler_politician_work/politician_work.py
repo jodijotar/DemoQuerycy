@@ -99,5 +99,3 @@ def process_all_urls(urls_file):
 # Chama a função para processar todas as URLs
 dados_coletados = process_all_urls(urls_file)
 print(dados_coletados)
-
-

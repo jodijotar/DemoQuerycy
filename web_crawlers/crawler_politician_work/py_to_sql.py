@@ -32,6 +32,13 @@ try:
                 sql = """
                 INSERT INTO law_records (tipo, numero, ano, data, autor, resumo, situacao, tema)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    tipo = VALUES(tipo),
+                    data = VALUES(data),
+                    autor = VALUES(autor),
+                    resumo = VALUES(resumo),
+                    situacao = VALUES(situacao),
+                    tema = VALUES(tema);
                 """
                 cursor.execute(sql, (tipo, numero, ano, data, autor, resumo, situacao, tema))
 
